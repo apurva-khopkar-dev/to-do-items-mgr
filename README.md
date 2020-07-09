@@ -56,7 +56,12 @@ You should get `To do list node App is listening on port 3000`
 
 ## Run the application
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files. You can also provide a custom free port number if default port `4200` is busy.
+Run `ng serve` from cloned project directory `to-do-list`. 
+```sh
+$ cd to-do-list
+$ ng serve
+```
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files. You can also provide a custom free port number if default port `4200` is busy.
 Example, `ng serve --port 4201`
 
 ## Code scaffolding
