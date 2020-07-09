@@ -1,0 +1,24 @@
+<form [formGroup]="dataForm">
+    <ng-container *ngTemplateOutlet="editMode ? editTemplate : defaultTemplate"></ng-container>
+
+    <ng-template #editTemplate>
+        <div [ngSwitch]="currentColumn.key">
+
+                <mat-form-field  *ngSwitchCase="'label'" appearance="fill">
+                        <input matInput type="text" formControlName="label" (keyup.enter)="onValueChanged('label', $event)" autofocus>
+                </mat-form-field>
+
+                <mat-form-field  *ngSwitchCase="'priority'" appearance="fill">
+                        <input matInput type="number" formControlName="priority" (keyup.enter)="onValueChanged('priority', $event)" autofocus>
+                </mat-form-field>
+
+            <div *ngSwitchDefault> </div>
+        </div>
+    </ng-template>
+
+    <ng-template #defaultTemplate>
+        <span matTooltip="{{currentItem[currentColumn.key]}}">
+            {{currentItem[currentColumn.key]}}
+        </span>
+    </ng-template>
+</form>

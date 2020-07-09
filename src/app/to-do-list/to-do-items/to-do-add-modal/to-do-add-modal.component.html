@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Add New Item</h1>
+<form [formGroup]="modalForm" (ngSubmit)="onSubmit()">
+    <div mat-dialog-content>
+
+        <mat-form-field>
+            <mat-label>Label</mat-label>
+            <input formControlName="label" matInput type="text">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Priority</mat-label>
+            <input formControlName="priority" matInput type="number">
+        </mat-form-field>
+
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onClose()">Cancel</button>
+        <button mat-button type="submit" cdkFocusInitial>Ok</button>
+    </div>
+</form>
