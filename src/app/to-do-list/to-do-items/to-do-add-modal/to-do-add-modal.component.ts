@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ToDoItem } from '../../../../../../to-do-list copy/src/app/to-do-list/to-do-item.model';
 import { FormBuilder } from '@angular/forms';
 import { AddModalDialogData } from './add-modal-dialog-data.model';
+import { ToDoItem } from '../../to-do-item.model';
 
 @Component({
   selector: 'app-to-do-add-modal',

@@ -46,6 +46,7 @@ Install the dependencies and devDependencies and start the server.
 ```sh
 $ cd to-do-list
 $ npm install
+$ npm install cors
 ```
 ## Run the Node JS server
 ```sh
