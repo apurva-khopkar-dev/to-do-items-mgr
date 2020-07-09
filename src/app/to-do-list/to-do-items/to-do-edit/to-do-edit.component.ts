@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, TemplateRef, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { ToDoItem } from '../../to-do-item.model';
 import { TodoListColumn } from '../to-do-items.component';
-import { FormControl, FormBuilder } from '@angular/forms';
+import { FormControl, FormBuilder, Validators } from '@angular/forms';
 import { fromEvent, Subject, } from 'rxjs';
 import { switchMap, takeUntil, filter, take, switchMapTo } from 'rxjs/operators';
 
@@ -23,14 +23,14 @@ export class ToDoEditComponent implements OnInit {
   currentColumn: TodoListColumn;
 
   @Input()
-  rowIndex: number; 
+  rowIndex: number;
 
   @Output()
   updateRowData = new EventEmitter<ToDoItem>();
 
   dataForm = this.formBuilder.group({
-    label: '',
-    priority: 0
+    label: new FormControl('', [Validators.required]),
+    priority: new FormControl(1, [Validators.required, Validators.min(1)])
   });
 
   currentItem: ToDoItem;
@@ -49,14 +49,16 @@ export class ToDoEditComponent implements OnInit {
   }
 
   public onValueChanged() {
-    this.itemList.map((item, index) => {
+    if (this.dataForm.valid) {
+      this.itemList.map((item, index) => {
         if (item.id === this.currentItem.id) {
           item.label = this.dataForm.get('label').value;
           item.priority = this.dataForm.get('priority').value;
         }
-    });
-    this.editMode = false;
-    this.tableData.next(this.itemList);
+      });
+      this.editMode = false;
+      this.tableData.next(this.itemList);
+    }
   }
 
   private dblClickEventListener() {

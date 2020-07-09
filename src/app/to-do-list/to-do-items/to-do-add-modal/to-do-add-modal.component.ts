@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { AddModalDialogData } from './add-modal-dialog-data.model';
 import { ToDoItem } from '../../to-do-item.model';
 
@@ -15,8 +15,8 @@ export class ToDoAddModalComponent implements OnInit {
               private formBuilder: FormBuilder){ }
 
   modalForm = this.formBuilder.group({
-    label: '',
-    priority: 0
+   label: new FormControl('', [Validators.required]),
+    priority: new FormControl(1, [Validators.required, Validators.min(1)])
   });
 
   itemData: ToDoItem = {

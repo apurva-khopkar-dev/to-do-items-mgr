@@ -14,6 +14,6 @@
     </div>
     <div mat-dialog-actions>
         <button mat-button (click)="onClose()">Cancel</button>
-        <button mat-button type="submit" cdkFocusInitial>Ok</button>
+        <button mat-button type="submit" [disabled]="!modalForm.valid" cdkFocusInitial>Ok</button>
     </div>
 </form>
