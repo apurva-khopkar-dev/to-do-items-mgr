@@ -82,8 +82,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 
-## Demo
-![](Apurva Khopkar_to_do_list.mp4)
 
 
    [dill]: <https://github.com/apurva-khopkar-dev/to-do-items-mgr>
