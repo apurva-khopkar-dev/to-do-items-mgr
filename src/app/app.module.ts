@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToDoListModule } from './to-do-list/to-do-list.module';
+import { ToDoItemsContainerComponent } from './to-do-list/to-do-items-container/to-do-items-container.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,6 @@ import { ToDoListModule } from './to-do-list/to-do-list.module';
     BrowserAnimationsModule,
     ToDoListModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

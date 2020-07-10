@@ -12,7 +12,7 @@ import { switchMap, takeUntil, filter, take, switchMapTo } from 'rxjs/operators'
 })
 export class ToDoEditComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private host: ElementRef, private cd: ChangeDetectorRef) { }
+  constructor(private formBuilder: FormBuilder, private host: ElementRef) { }
 
   editMode = false;
 

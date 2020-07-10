@@ -48,6 +48,7 @@ import { CommonModule } from '@angular/common';
 import { ToDoEditComponent } from './to-do-items/to-do-edit/to-do-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToDoAddModalComponent } from './to-do-items/to-do-add-modal/to-do-add-modal.component';
+import { ToDoListServicesModule } from './to-do-list-services/to-do-list-services.module';
 
 @NgModule({
   declarations: [ToDoItemsComponent, ToDoItemsContainerComponent, ToDoEditComponent, ToDoAddModalComponent],
@@ -98,7 +99,8 @@ import { ToDoAddModalComponent } from './to-do-items/to-do-add-modal/to-do-add-m
     HttpClientModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToDoListServicesModule
   ],
   exports: [ToDoItemsContainerComponent, ToDoEditComponent, ToDoAddModalComponent]
 })
